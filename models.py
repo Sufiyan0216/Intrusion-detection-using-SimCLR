@@ -28,7 +28,7 @@ class Extractor(nn.Module):
                 n_features,
                 n_channels=3, 
                 embedding_size=64,
-                filter_list=[64, 64, 64, 64], 
+                filter_list=[64, 256, 256, 512], 
                 block_list=[3, 4, 6, 3]) -> None:
         super().__init__()
 
