@@ -1,3 +1,5 @@
+import os
+import pickle
 import numpy as np
 from collections import Counter
 from imblearn.over_sampling import SMOTE
@@ -17,3 +19,8 @@ def smote_sampling(X: np.ndarray, y: np.ndarray):
 
 def invert_array(X: np.ndarray):
     return np.flip(X, axis=1)
+
+def store_checkpoint(model, name, epoch, prefix='resnet'):
+    path2store = os.path.join('./dist/', prefix, f'{name}-{epoch}.pkl')
+    with open(path2store, 'wb') as f:
+        pickle.dump(model, f)
